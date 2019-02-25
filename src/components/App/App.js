@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios'
-import './MonthItem/MonthItem';
-import '.MonthList/MonthList';
+import '../MonthItem/MonthItem';
+// import '..MonthList/MonthList';
 import MonthItem from '../MonthItem/MonthItem';
 
 class App extends Component {
@@ -19,12 +19,12 @@ class App extends Component {
     axios({
       method: 'GET',
       url: '/calendar'
-    }).then((response) => {
+    }).then( (response) => {
       this.setState({
         monthList: response.data
       });
-    }).catch((error) => {
-      alert('could not GET Calendar!');
+    }).catch( (error) => {
+      alert( 'could not GET Calendar!' );
       console.log('could not get calendar', error);
     })
   };
@@ -33,19 +33,19 @@ class App extends Component {
   render() {
 
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Select a Month</h1>
-          <h3>SELECTED MONTH GOES HERE</h3>
-          
+      <div className = "App" >
+        <header className = "App-header" >
+          <h1 className = "App-title" > Select a Month </h1>
+          <h3> SELECTED MONTH GOES HERE </h3>
+          <MonthItem />
           <br />
         </header>
         <br />
-        <p>List of months goes here</p>
+        <p> List of months goes here </p>
 
 
-      <MonthItem />
-        <MonthList  list={this.state.monthList}/>
+       
+        <MonthList list = {this.state.monthList} />
 
       </div>
     );

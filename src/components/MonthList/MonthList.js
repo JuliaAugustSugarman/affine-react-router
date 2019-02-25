@@ -10,12 +10,16 @@ class MonthList extends Component {
             <div>
                 {
                     this.props.list.map(item =>
-                        <MonthItem item={item} />
+                        < MonthItem item={item} />
                     )
                 }
 
-                
+
             </div>
         )
+            
+    }
 
-        export default MonthList;
+}
+
+export default MonthList;
