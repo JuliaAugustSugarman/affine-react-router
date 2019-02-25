@@ -5,7 +5,7 @@ const monthItems = require('../modules/calendar.data');
 // DO NOT MODIFY THIS FILE
 
 // GET Route
-router.get('/',  (req, res) => {
+router.get('/calendar',  (req, res) => {
     res.send(monthItems);
 }); // END GET Route
 
